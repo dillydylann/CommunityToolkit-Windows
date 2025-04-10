@@ -109,7 +109,7 @@ internal static partial class SwitchHelpers
         }
         else if (targetType.IsEnum && value is string str)
         {
-#if HAS_UNO
+#if NETFRAMEWORK || HAS_UNO
             if (Enum.IsDefined(targetType, str))
             {
                 return Enum.Parse(targetType, str);

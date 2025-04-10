@@ -39,7 +39,7 @@ public sealed class CrossFadeEffect : PipelineEffect
     public double Factor
     {
         get => this.factor;
-        set => this.factor = Math.Clamp(value, 0, 1);
+        set => this.factor = MathCompat.Clamp(value, 0, 1);
     }
 
     /// <summary>

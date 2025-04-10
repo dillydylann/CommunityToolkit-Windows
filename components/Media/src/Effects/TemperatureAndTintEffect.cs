@@ -20,7 +20,7 @@ public sealed class TemperatureAndTintEffect : PipelineEffect
     public double Temperature
     {
         get => this.temperature;
-        set => this.temperature = Math.Clamp(value, -1, 1);
+        set => this.temperature = MathCompat.Clamp(value, -1, 1);
     }
 
     private double tint;
@@ -31,7 +31,7 @@ public sealed class TemperatureAndTintEffect : PipelineEffect
     public double Tint
     {
         get => this.tint;
-        set => this.tint = Math.Clamp(value, -1, 1);
+        set => this.tint = MathCompat.Clamp(value, -1, 1);
     }
 
     /// <inheritdoc/>

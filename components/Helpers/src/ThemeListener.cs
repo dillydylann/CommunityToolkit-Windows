@@ -11,6 +11,10 @@ using Windows.System;
 using Microsoft.UI.Dispatching;
 #endif
 
+#if !WINAPPSDK && NETFRAMEWORK
+using DispatcherQueuePriority = Windows.System.DispatcherQueuePriority;
+#endif
+
 // TODO: Fix tests for WinUI3
 // [assembly: InternalsVisibleTo("UnitTests.XamlIslands.UWPApp")]
 namespace CommunityToolkit.WinUI.Helpers;

@@ -172,7 +172,7 @@ internal abstract partial class TimedKeyFrameAnimationBuilder<T> : ITimedKeyFram
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float GetNormalizedProgress(TimeSpan duration)
         {
-#if !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             return (float)Math.Clamp(this.progress.TotalMilliseconds / duration.TotalMilliseconds, 0, 1);
 #else
             var result = this.progress.TotalMilliseconds / duration.TotalMilliseconds;

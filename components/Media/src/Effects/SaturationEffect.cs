@@ -22,7 +22,7 @@ public sealed class SaturationEffect : PipelineEffect
     public double Value
     {
         get => this.value;
-        set => this.value = Math.Clamp(value, 0, 1);
+        set => this.value = MathCompat.Clamp(value, 0, 1);
     }
 
     /// <summary>

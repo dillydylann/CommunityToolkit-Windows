@@ -42,7 +42,15 @@ internal sealed class CompositionObjectCache<T>
 
             // Create a new instance when needed
             var fallback = producer(compositor);
+#if NETFRAMEWORK
+            if (this.cache.TryGetValue(compositor, out var _))
+            {
+                this.cache.Remove(compositor);
+            }
+            this.cache.Add(compositor, new WeakReference<T>(fallback));
+#else
             this.cache.AddOrUpdate(compositor, new WeakReference<T>(fallback));
+#endif
 
             return fallback;
         }

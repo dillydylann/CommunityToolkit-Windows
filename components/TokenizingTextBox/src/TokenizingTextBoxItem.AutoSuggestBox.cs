@@ -215,7 +215,7 @@ public partial class TokenizingTextBoxItem
         {
             bool lastDelimited = t[t.Length - 1] == Owner.TokenDelimiter[0];
 
-#if HAS_UNO
+#if NETFRAMEWORK || HAS_UNO
             string[] tokens = t.Split(new[] { Owner.TokenDelimiter }, System.StringSplitOptions.RemoveEmptyEntries);
 #else
             string[] tokens = t.Split(Owner.TokenDelimiter);

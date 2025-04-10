@@ -40,7 +40,7 @@ internal static class UriExtensions
     [Pure]
     public static Uri ToAppxUri(this string path)
     {
-        string prefix = $"ms-appx://{(path.StartsWith('/') ? string.Empty : "/")}";
+        string prefix = $"ms-appx://{(path.StartsWith("/") ? string.Empty : "/")}";
 
         return new Uri($"{prefix}{path}");
     }

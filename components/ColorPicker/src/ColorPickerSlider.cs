@@ -77,7 +77,7 @@ public partial class ColorPickerSlider : Slider
             {
                 case ColorChannel.Channel1:
                 {
-                    var channelValue = Math.Clamp(sliderPercent * 360.0, 0.0, 360.0);
+                    var channelValue = MathCompat.Clamp(sliderPercent * 360.0, 0.0, 360.0);
 
                     hsvColor = new HsvColor()
                     {
@@ -91,7 +91,7 @@ public partial class ColorPickerSlider : Slider
 
                 case ColorChannel.Channel2:
                 {
-                    var channelValue = Math.Clamp(sliderPercent * 1.0, 0.0, 1.0);
+                    var channelValue = MathCompat.Clamp(sliderPercent * 1.0, 0.0, 1.0);
 
                     hsvColor = new HsvColor()
                     {
@@ -105,7 +105,7 @@ public partial class ColorPickerSlider : Slider
 
                 case ColorChannel.Channel3:
                 {
-                    var channelValue = Math.Clamp(sliderPercent * 1.0, 0.0, 1.0);
+                    var channelValue = MathCompat.Clamp(sliderPercent * 1.0, 0.0, 1.0);
 
                     hsvColor = new HsvColor()
                     {
@@ -138,7 +138,7 @@ public partial class ColorPickerSlider : Slider
                 };
             }
 
-            byte channelValue = Convert.ToByte(Math.Clamp(sliderPercent * 255.0, 0.0, 255.0));
+            byte channelValue = Convert.ToByte(MathCompat.Clamp(sliderPercent * 255.0, 0.0, 255.0));
 
             switch (this.ColorChannel)
             {

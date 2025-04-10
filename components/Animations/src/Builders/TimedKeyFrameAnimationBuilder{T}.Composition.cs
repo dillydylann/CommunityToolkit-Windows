@@ -58,7 +58,7 @@ internal abstract partial class TimedKeyFrameAnimationBuilder<T>
             // We can retrieve the total duration from the last timed keyframe, and then set
             // this as the target duration and use it to normalize the keyframe progresses.
             ArraySegment<KeyFrameInfo> keyFrames = this.keyFrames.GetArraySegment();
-#if !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             TimeSpan duration = keyFrames[keyFrames.Count - 1].GetTimedProgress(default);
 #else
             TimeSpan duration = keyFrames.Array[keyFrames.Count - 1].GetTimedProgress(default);

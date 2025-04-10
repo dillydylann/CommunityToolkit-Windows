@@ -46,7 +46,7 @@ public sealed partial class AcrylicSourceExtension : MarkupExtension
     public double TintOpacity
     {
         get => this.tintOpacity;
-        set => this.tintOpacity = Math.Clamp(value, 0, 1);
+        set => this.tintOpacity = MathCompat.Clamp(value, 0, 1);
     }
 
     /// <summary>

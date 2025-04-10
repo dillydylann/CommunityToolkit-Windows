@@ -793,26 +793,26 @@ public partial class ColorPicker : Microsoft.UI.Xaml.Controls.ColorPicker
             {
                 case ColorChannel.Channel1:
                 {
-                    hue = Math.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 360);
+                    hue = MathCompat.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 360);
                     break;
                 }
 
                 case ColorChannel.Channel2:
                 {
-                    saturation = Math.Clamp((double.IsNaN(newValue) ? 0 : newValue) / 100, 0, 1);
+                    saturation = MathCompat.Clamp((double.IsNaN(newValue) ? 0 : newValue) / 100, 0, 1);
                     break;
                 }
 
                 case ColorChannel.Channel3:
                 {
-                    value = Math.Clamp((double.IsNaN(newValue) ? 0 : newValue) / 100, 0, 1);
+                    value = MathCompat.Clamp((double.IsNaN(newValue) ? 0 : newValue) / 100, 0, 1);
                     break;
                 }
 
                 case ColorChannel.Alpha:
                 {
                     // Unlike color channels, default to no transparency
-                    alpha = Math.Clamp((double.IsNaN(newValue) ? 100 : newValue) / 100, 0, 1);
+                    alpha = MathCompat.Clamp((double.IsNaN(newValue) ? 100 : newValue) / 100, 0, 1);
                     break;
                 }
             }
@@ -844,26 +844,26 @@ public partial class ColorPicker : Microsoft.UI.Xaml.Controls.ColorPicker
             {
                 case ColorChannel.Channel1:
                 {
-                    red = Convert.ToByte(Math.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
+                    red = Convert.ToByte(MathCompat.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
                     break;
                 }
 
                 case ColorChannel.Channel2:
                 {
-                    green = Convert.ToByte(Math.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
+                    green = Convert.ToByte(MathCompat.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
                     break;
                 }
 
                 case ColorChannel.Channel3:
                 {
-                    blue = Convert.ToByte(Math.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
+                    blue = Convert.ToByte(MathCompat.Clamp(double.IsNaN(newValue) ? 0 : newValue, 0, 255));
                     break;
                 }
 
                 case ColorChannel.Alpha:
                 {
                     // Unlike color channels, default to no transparency
-                    alpha = Convert.ToByte(Math.Clamp(double.IsNaN(newValue) ? 255 : newValue, 0, 255));
+                    alpha = Convert.ToByte(MathCompat.Clamp(double.IsNaN(newValue) ? 255 : newValue, 0, 255));
                     break;
                 }
             }

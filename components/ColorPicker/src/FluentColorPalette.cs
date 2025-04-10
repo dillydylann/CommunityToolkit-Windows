@@ -167,7 +167,7 @@ public class FluentColorPalette : IColorPalette
         int shadeIndex)
     {
         return colorChart[
-            Math.Clamp(colorIndex, 0, colorChart.GetLength(0)),
-            Math.Clamp(shadeIndex, 0, colorChart.GetLength(1))];
+            MathCompat.Clamp(colorIndex, 0, colorChart.GetLength(0)),
+            MathCompat.Clamp(shadeIndex, 0, colorChart.GetLength(1))];
     }
 }

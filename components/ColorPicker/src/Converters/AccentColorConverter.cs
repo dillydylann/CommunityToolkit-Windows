@@ -39,10 +39,10 @@ public partial class AccentColorConverter : IValueConverter
 
             return new HsvColor()
             {
-                A = Math.Clamp(hsvColor.A, 0.0, 1.0),
-                H = Math.Clamp(hsvColor.H, 0.0, 360.0),
-                S = Math.Clamp(hsvColor.S, 0.0, 1.0),
-                V = Math.Clamp(colorValue, 0.0, 1.0),
+                A = MathCompat.Clamp(hsvColor.A, 0.0, 1.0),
+                H = MathCompat.Clamp(hsvColor.H, 0.0, 360.0),
+                S = MathCompat.Clamp(hsvColor.S, 0.0, 1.0),
+                V = MathCompat.Clamp(colorValue, 0.0, 1.0),
             };
         }
         else

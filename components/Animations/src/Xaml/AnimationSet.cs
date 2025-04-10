@@ -98,7 +98,7 @@ public sealed partial class AnimationSet : DependencyObjectCollection
 
         CancellationTokenSource cancellationTokenSource = new();
 
-#if !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
         this.cancellationTokenMap.AddOrUpdate(element, cancellationTokenSource);
 #else
         // If we have a token, remove it first, before adding new one.

@@ -25,7 +25,7 @@ public sealed class ShadeEffect : PipelineEffect
     public double Intensity
     {
         get => this.intensity;
-        set => this.intensity = Math.Clamp(value, 0, 1);
+        set => this.intensity = MathCompat.Clamp(value, 0, 1);
     }
 
     /// <inheritdoc/>

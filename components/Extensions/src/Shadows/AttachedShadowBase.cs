@@ -179,7 +179,7 @@ public abstract partial class AttachedShadowBase : DependencyObject, IAttachedSh
     /// <inheritdoc/>
     public IEnumerable<AttachedShadowElementContext> EnumerateElementContexts()
     {
-#if !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
         foreach (var kvp in ShadowElementContextTable)
         {
             yield return kvp.Value;
@@ -201,7 +201,7 @@ public abstract partial class AttachedShadowBase : DependencyObject, IAttachedSh
 
     private void CallPropertyChangedForEachElement(DependencyProperty property, object oldValue, object newValue)
     {
-#if !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
         foreach (var context in ShadowElementContextTable)
         {
             if (context.Value.IsInitialized)

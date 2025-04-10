@@ -106,7 +106,7 @@ public static partial class TextBoxExtensions
 
             if (options.EnableMinMaxValue)
             {
-                number = Math.Clamp(number, options.MinValue, options.MaxValue);
+                number = MathCompat.Clamp(number, options.MinValue, options.MaxValue);
             }
         }
         else

@@ -22,7 +22,7 @@ public sealed class ExposureEffect : PipelineEffect
     public double Amount
     {
         get => this.amount;
-        set => this.amount = Math.Clamp(value, -2, 2);
+        set => this.amount = MathCompat.Clamp(value, -2, 2);
     }
 
     /// <summary>

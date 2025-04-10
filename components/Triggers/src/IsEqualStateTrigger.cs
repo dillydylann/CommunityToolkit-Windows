@@ -93,7 +93,7 @@ public class IsEqualStateTrigger : StateTriggerBase
     private static object? ConvertToEnum(Type enumType, object? value)
     {
         // value cannot be the same type of enum now
-#if HAS_UNO
+#if NETFRAMEWORK || HAS_UNO
         bool EnumTryParse(Type type, string str, out object? value)
         {
             if (Enum.IsDefined(type, str))
@@ -108,7 +108,7 @@ public class IsEqualStateTrigger : StateTriggerBase
 #endif
         return value switch
         {
-#if HAS_UNO
+#if NETFRAMEWORK || HAS_UNO
             string str => EnumTryParse(enumType, str, out var e) ? e : null,
 #else
             string str => Enum.TryParse(enumType, str, out var e) ? e : null,

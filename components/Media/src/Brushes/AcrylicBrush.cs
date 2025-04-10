@@ -149,7 +149,7 @@ public sealed partial class AcrylicBrush : XamlCompositionEffectBrushBase
     public double TintOpacity
     {
         get => (double)GetValue(TintOpacityProperty);
-        set => SetValue(TintOpacityProperty, Math.Clamp(value, 0, 1));
+        set => SetValue(TintOpacityProperty, MathCompat.Clamp(value, 0, 1));
     }
 
     /// <summary>

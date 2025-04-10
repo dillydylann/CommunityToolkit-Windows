@@ -112,7 +112,15 @@ public partial class RichSuggestBox : ItemsControl
         {
             foreach (var token in tokens)
             {
-                _tokens.TryAdd($"\"{token.Id}\"", token);
+                var key = $"\"{token.Id}\"";
+#if NETFRAMEWORK
+                if (!_tokens.ContainsKey(key))
+                {
+                    _tokens.Add(key, token);
+                }
+#else
+                _tokens.TryAdd(key, token);
+#endif
             }
         }
     }

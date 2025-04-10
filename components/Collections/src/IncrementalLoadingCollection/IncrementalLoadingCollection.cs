@@ -237,7 +237,7 @@ public class IncrementalLoadingCollection<TSource, IType> : ObservableCollection
                         throw t.Exception!;
                     }
 
-#if HAS_UNO
+#if NETFRAMEWORK || HAS_UNO
                     if (t.IsCompleted && t.Status == TaskStatus.RanToCompletion)
 #else
                     if (t.IsCompletedSuccessfully)

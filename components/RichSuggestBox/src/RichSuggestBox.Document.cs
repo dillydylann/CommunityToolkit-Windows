@@ -100,9 +100,9 @@ public partial class RichSuggestBox
 
     private void ValidateTokensInDocument()
     {
-        foreach (var (_, token) in _tokens)
+        foreach (var token in _tokens)
         {
-            token.Active = false;
+            token.Value.Active = false;
         }
         if (TextDocument != null)
         {

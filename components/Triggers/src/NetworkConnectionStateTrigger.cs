@@ -7,6 +7,8 @@ using Windows.System;
 
 #if WINAPPSDK
 using DispatcherQueuePriority = Microsoft.UI.Dispatching.DispatcherQueuePriority;
+#elif NETFRAMEWORK
+using DispatcherQueuePriority = Windows.System.DispatcherQueuePriority;
 #endif
 
 namespace CommunityToolkit.WinUI;

@@ -22,7 +22,7 @@ public sealed class SepiaEffect : PipelineEffect
     public double Intensity
     {
         get => this.intensity;
-        set => this.intensity = Math.Clamp(value, 0, 1);
+        set => this.intensity = MathCompat.Clamp(value, 0, 1);
     }
 
     /// <summary>

@@ -10,6 +10,10 @@ using Microsoft.UI.Dispatching;
 using Windows.System;
 #endif
 
+#if !WINAPPSDK && NETFRAMEWORK
+using DispatcherQueuePriority = Windows.System.DispatcherQueuePriority;
+#endif
+
 namespace CommunityToolkit.WinUI.Controls;
 
 /// <summary>

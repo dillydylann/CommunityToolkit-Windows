@@ -30,7 +30,11 @@ internal static class GenericExtensions
             throw new InvalidOperationException($"The key {key} already exists in the current pipeline");
         }
 
+#if NETFRAMEWORK
+        return a.Concat(b).ToDictionary(kv => kv.Key, kv => kv.Value);
+#else
         return new Dictionary<TKey, TValue>(a.Concat(b));
+#endif
     }
 
     /// <summary>

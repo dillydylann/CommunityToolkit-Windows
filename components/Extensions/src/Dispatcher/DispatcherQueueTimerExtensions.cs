@@ -81,7 +81,15 @@ public static class DispatcherQueueTimerExtensions
             timer.Tick += Timer_Tick;
 
             // Store/Update function
+#if NETFRAMEWORK
+            if (_debounceInstances.TryGetValue(timer, out var _))
+            {
+                _debounceInstances.Remove(timer);
+            }
+            _debounceInstances.Add(timer, action);
+#else
             _debounceInstances.AddOrUpdate(timer, action);
+#endif
         }
 
         // Start the timer to keep track of the last call here.

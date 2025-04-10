@@ -3,7 +3,13 @@
 // See the LICENSE file in the project root for more information.
 
 namespace CommunityToolkit.WinUI.Controls;
-internal partial class CornerRadiusConverter : IValueConverter
+
+#if NETFRAMEWORK
+public
+#else
+internal
+#endif
+partial class CornerRadiusConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, string language)
     {

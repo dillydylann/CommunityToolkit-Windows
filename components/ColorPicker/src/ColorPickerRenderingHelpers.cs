@@ -301,7 +301,7 @@ internal class ColorPickerRenderingHelpers
                         {
                             // Sweep hue
                             newRgbColor = Helpers.ColorHelper.FromHsv(
-                                Math.Clamp(channelValue, 0.0, 360.0),
+                                MathCompat.Clamp(channelValue, 0.0, 360.0),
                                 baseHsvColor.S,
                                 baseHsvColor.V,
                                 baseHsvColor.A);
@@ -311,7 +311,7 @@ internal class ColorPickerRenderingHelpers
                             // Sweep red
                             newRgbColor = new Color
                             {
-                                R = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                R = Convert.ToByte(MathCompat.Clamp(channelValue, 0.0, 255.0)),
                                 G = baseRgbColor.G,
                                 B = baseRgbColor.B,
                                 A = baseRgbColor.A
@@ -328,7 +328,7 @@ internal class ColorPickerRenderingHelpers
                             // Sweep saturation
                             newRgbColor = Helpers.ColorHelper.FromHsv(
                                 baseHsvColor.H,
-                                Math.Clamp(channelValue, 0.0, 1.0),
+                                MathCompat.Clamp(channelValue, 0.0, 1.0),
                                 baseHsvColor.V,
                                 baseHsvColor.A);
                         }
@@ -338,7 +338,7 @@ internal class ColorPickerRenderingHelpers
                             newRgbColor = new Color
                             {
                                 R = baseRgbColor.R,
-                                G = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                G = Convert.ToByte(MathCompat.Clamp(channelValue, 0.0, 255.0)),
                                 B = baseRgbColor.B,
                                 A = baseRgbColor.A
                             };
@@ -355,7 +355,7 @@ internal class ColorPickerRenderingHelpers
                             newRgbColor = Helpers.ColorHelper.FromHsv(
                                 baseHsvColor.H,
                                 baseHsvColor.S,
-                                Math.Clamp(channelValue, 0.0, 1.0),
+                                MathCompat.Clamp(channelValue, 0.0, 1.0),
                                 baseHsvColor.A);
                         }
                         else
@@ -365,7 +365,7 @@ internal class ColorPickerRenderingHelpers
                             {
                                 R = baseRgbColor.R,
                                 G = baseRgbColor.G,
-                                B = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                B = Convert.ToByte(MathCompat.Clamp(channelValue, 0.0, 255.0)),
                                 A = baseRgbColor.A
                             };
                         }
@@ -382,7 +382,7 @@ internal class ColorPickerRenderingHelpers
                                 baseHsvColor.H,
                                 baseHsvColor.S,
                                 baseHsvColor.V,
-                                Math.Clamp(channelValue, 0.0, 1.0));
+                                MathCompat.Clamp(channelValue, 0.0, 1.0));
                         }
                         else
                         {
@@ -392,7 +392,7 @@ internal class ColorPickerRenderingHelpers
                                 R = baseRgbColor.R,
                                 G = baseRgbColor.G,
                                 B = baseRgbColor.B,
-                                A = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0))
+                                A = Convert.ToByte(MathCompat.Clamp(channelValue, 0.0, 255.0))
                             };
                         }
 
